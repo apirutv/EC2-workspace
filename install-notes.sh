@@ -21,3 +21,10 @@ git status -s
 sudo apt-get install open-jdk...
 
 sudo apt-get install maven
+
+sudo apt-get install htop
+
+# getting file from Internet
+wget [url]
+
+
