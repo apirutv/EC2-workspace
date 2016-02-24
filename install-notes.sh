@@ -4,6 +4,7 @@ sudo apt-get install nmon
 
 # install and config git
 sudo apt-get install git
+copy id_rsa to .ssh
 git config --global user.name "Apirut Vanchaam"
 git config --global user.email "apirut@live.com"
 git config --list # show all configs
