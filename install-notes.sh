@@ -1,3 +1,12 @@
+# FIREWALL PORTS TO BE OPENED
+22 - ssh
+2888 - zookeeper sync
+3888 - zookeeper sync
+2181 - zookeeper service
+6627 - storm nimbus
+6700 - 6703 - storm supervisor ports 
+ 
+
 # set prompt
 PS1='${debian_chroot:+($debian_chroot)}\u@STORM 1:\w\$ '
 
@@ -75,12 +84,14 @@ $ZK_HOME/bin/zkServer.sh start
 $ZK_HOME/bin/zkServer.sh status
 
 # download apache storm
-wget http://www.apache.org/dyn/closer.lua/storm/apache-storm-0.10.0/apache-storm-0.10.0.tar.gz
+wget http://www.us.apache.org/dist/storm/apache-storm-0.10.0/apache-storm-0.10.0.tar.gz
 tar -xzvf apache-storm-0.10.0.tar.gz
 STORM_HOME=/home/ubuntu/storm/apache-storm-0.10.0
 HOME=/home/ubuntu
 
-# add the allowing lines to $STORM_HOME/conf/storm.yaml
+********* SINGLE NODE **********
+
+# add the allowing lines to $STORM_HOME/conf/storm.yaml (SINGLE NODE)
 storm.zookeeper.servers:
      - "127.0.0.1"
 storm.zookeeper.port: 2181
@@ -100,5 +111,28 @@ $STORM_HOME/bin/storm nimbus
 # start supervisor node
 $STORM_HOME/bin/storm supervisor
 
+********* MULTIPLE NODE **********
 
+# add the allowing lines to $STORM_HOME/conf/storm.yaml (MULTIPLE NODE)
+storm.zookeeper.servers:
+     - "storm1"
+     - "storm2"
+     - "storm3"
+storm.zookeeper.port: 2181
+#nimbus.host: "127.0.0.1"
+nimbus.host: "storm1"
+storm.local.dir: "/tmp/storm-data"
+java.library.path: "/usr/local/lib"
+storm.messaging.transport: backtype.storm.messaging.netty.Context
+supervisor.slots.ports:
+     - 6700
+     - 6701
+     - 6702
+     - 6703
+
+# on master node
+bin/storm nimbus
+
+# on worker nodes
+bin/storm supervisor
 
