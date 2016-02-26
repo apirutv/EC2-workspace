@@ -1,14 +1,6 @@
-# FIREWALL PORTS TO BE OPENED
-22 - ssh
-2888 - zookeeper sync
-3888 - zookeeper sync
-2181 - zookeeper service
-6627 - storm nimbus
-6700 - 6703 - storm supervisor ports 
- 
+# configure prompt                                                                  
+PS1='${debian_chroot:+($debian_chroot)}\u@STORM 2:\w\$ '                                 
 
-# set prompt
-PS1='${debian_chroot:+($debian_chroot)}\u@STORM 1:\w\$ '
 
 # install nmon
 sudo apt-get install nmon
@@ -67,16 +59,6 @@ tickTime=2000
 dataDir=/tmp/zookeeper
 clientPort=2181
 
-# cluster config
-server.1=0.0.0.0:2888:3888 # FOR THE LOCAL NODE
-server.2=storm2:2888:3888
-server.3=storm3:2888:3888
-
-# add file myid under /tmp/zookeeper (cluster config only)
-At   storm1 /tmp/zookeeper/myid contains    1
-At   storm2 /tmp/zookeeper/myid contains    2
-At   storm3 /tmp/zookeeper/myid contains    3
-
 # start zookeeper
 $ZK_HOME/bin/zkServer.sh start
 
@@ -84,14 +66,12 @@ $ZK_HOME/bin/zkServer.sh start
 $ZK_HOME/bin/zkServer.sh status
 
 # download apache storm
-wget http://www.us.apache.org/dist/storm/apache-storm-0.10.0/apache-storm-0.10.0.tar.gz
+wget http://www.apache.org/dyn/closer.lua/storm/apache-storm-0.10.0/apache-storm-0.10.0.tar.gz
 tar -xzvf apache-storm-0.10.0.tar.gz
 STORM_HOME=/home/ubuntu/storm/apache-storm-0.10.0
 HOME=/home/ubuntu
 
-********* SINGLE NODE **********
-
-# add the allowing lines to $STORM_HOME/conf/storm.yaml (SINGLE NODE)
+# add the allowing lines to $STORM_HOME/conf/storm.yaml
 storm.zookeeper.servers:
      - "127.0.0.1"
 storm.zookeeper.port: 2181
@@ -111,28 +91,16 @@ $STORM_HOME/bin/storm nimbus
 # start supervisor node
 $STORM_HOME/bin/storm supervisor
 
-********* MULTIPLE NODE **********
+# ------------------------------------------
+# KAFKA INSTALLATION
+# ------------------------------------------
 
-# add the allowing lines to $STORM_HOME/conf/storm.yaml (MULTIPLE NODE)
-storm.zookeeper.servers:
-     - "storm1"
-     - "storm2"
-     - "storm3"
-storm.zookeeper.port: 2181
-#nimbus.host: "127.0.0.1"
-nimbus.host: "storm1"
-storm.local.dir: "/tmp/storm-data"
-java.library.path: "/usr/local/lib"
-storm.messaging.transport: backtype.storm.messaging.netty.Context
-supervisor.slots.ports:
-     - 6700
-     - 6701
-     - 6702
-     - 6703
+# download kafka
+wget http://www.eu.apache.org/dist/kafka/0.9.0.1/kafka_2.11-0.9.0.1.tgz
 
-# on master node
-bin/storm nimbus
+# add KAFKA_HOME to .profile
+KAFKA_HOME="$HOME/kafka/kafka_2.11-0.9.0.1"
+export KAFKA_HOME
 
-# on worker nodes
-bin/storm supervisor
+
 
