@@ -58,6 +58,16 @@ tickTime=2000
 dataDir=/tmp/zookeeper
 clientPort=2181
 
+# cluster config
+server.1=0.0.0.0:2888:3888 # FOR THE LOCAL NODE
+server.2=storm2:2888:3888
+server.3=storm3:2888:3888
+
+# add file myid under /tmp/zookeeper (cluster config only)
+At   storm1 /tmp/zookeeper/myid contains    1
+At   storm2 /tmp/zookeeper/myid contains    2
+At   storm3 /tmp/zookeeper/myid contains    3
+
 # start zookeeper
 $ZK_HOME/bin/zkServer.sh start
 
