@@ -1,3 +1,5 @@
+# set prompt
+PS1='${debian_chroot:+($debian_chroot)}\u@STORM 1:\w\$ '
 
 # install nmon
 sudo apt-get install nmon
