@@ -1,6 +1,14 @@
 # configure prompt                                                                  
 PS1='${debian_chroot:+($debian_chroot)}\u@STORM 2:\w\$ '                                 
 
+# drop cache to release memory
+free -m
+sync
+
+# switch to root shell
+sudo -i
+echo 3 > /proc/sys/vm/drop_cache
+
 
 # install nmon
 sudo apt-get install nmon
@@ -101,6 +109,10 @@ wget http://www.eu.apache.org/dist/kafka/0.9.0.1/kafka_2.11-0.9.0.1.tgz
 # add KAFKA_HOME to .profile
 KAFKA_HOME="$HOME/kafka/kafka_2.11-0.9.0.1"
 export KAFKA_HOME
+
+# change properties in the Kafka server properties file, server.properties at $KAFKA_HOME/config:
+log.dirs=/tmp/kafka-logs
+zookeeper.connect=storm1:2181,storm2:2181,storm3:2181
 
 
 
