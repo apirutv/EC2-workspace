@@ -101,3 +101,5 @@ EndOfStreamException: Unable to read additional data from client sessionid 0x153
 2016-02-25 04:18:05,069 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@192] - Accepted socket connection from /127.0.0.1:44037
 2016-02-25 04:18:05,072 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@900] - Client attempting to establish new session at /127.0.0.1:44037
 2016-02-25 04:18:05,073 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@645] - Established session 0x153129cf3ad000f with negotiated timeout 20000 for client /127.0.0.1:44037
+2016-02-25 13:33:25,177 [myid:] - INFO  [Snapshot Thread:FileTxnSnapLog@240] - Snapshotting: 0xd042 to /tmp/zookeeper/version-2/snapshot.d042
+2016-02-25 13:33:25,257 [myid:] - INFO  [SyncThread:0:FileTxnLog@199] - Creating new log file: log.d044

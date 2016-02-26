@@ -18,7 +18,7 @@ git config --global user.email "apirut@live.com"
 git config --list # show all configs
 
 # git command
-git clone git@github.com:apirutv/hello-world
+git clone git@github.com:apirutv/EC2-workspace
 git remote -v # show the origin url
 git remote show [origin]
 git fetch [remote name]
@@ -44,7 +44,7 @@ mvn -v
 # ------------------------------------------
 
 # download zookeeper
-wget http://www.us.apache.org/dist/storm/apache-storm-0.10.0/apache-storm-0.10.0.tar.gz
+wget http://www.eu.apache.org/dist/zookeeper/zookeeper-3.4.8/zookeeper-3.4.8.tar.gz
 tar -xzvf zookeeper-3.4.8.tar.gz
 
 # add ZK_HOME to .profile
