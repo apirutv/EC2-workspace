@@ -13,7 +13,7 @@ echo 3 > /proc/sys/vm/drop_cache
 # install nmon
 sudo apt-get install nmon
 
-sudo apt-get install open-jdk...
+sudo apt-get install openjdk-7-jdk
 sudo apt-get install htop
 
 # getting file from Internet
@@ -110,9 +110,24 @@ wget http://www.eu.apache.org/dist/kafka/0.9.0.1/kafka_2.11-0.9.0.1.tgz
 KAFKA_HOME="$HOME/kafka/kafka_2.11-0.9.0.1"
 export KAFKA_HOME
 
+# add KAFKA bin to path
+PATH="$KAFKA_HOME/bin:$PATH"                                                        
+~                                                                                   
+~                          
+
+# {OPTIONAL} change heap size in $KAFKA_HOME/bin/kafka-server-start.sh
+export KAFKA_HEAP_OPTS="-Xmx500M -Xms500M"
+
 # change properties in the Kafka server properties file, server.properties at $KAFKA_HOME/config:
 log.dirs=/tmp/kafka-logs
 zookeeper.connect=storm1:2181,storm2:2181,storm3:2181
+
+# cluster configuration only
+broker.id=[unique id e.g. 1,2,3]
+port=9092
+host.name=[ip/name of each host e.g. kafka1, kafka2]
+
+
 
 
 
