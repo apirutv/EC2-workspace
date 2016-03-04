@@ -28,6 +28,7 @@ STORM_HOME="$HOME/storm/apache-storm-0.10.0"
 export STORM_HOME
 
 PATH="$STORM_HOME/bin:$PATH"
+PATH="$ZK_HOME/bin:$PATH"
 
 # set prompt
 PS1='${debian_chroot:+($debian_chroot)}\u@STORM 1:\w\$ '

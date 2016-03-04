@@ -1,4 +1,4 @@
-$ZK_HOME/bin/zkServer.sh start
+/home/ubuntu/zookeeper/zookeeper-3.4.8/bin/zkServer.sh start
 
 
 
