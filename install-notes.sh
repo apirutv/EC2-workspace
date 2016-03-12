@@ -112,6 +112,10 @@ export KAFKA_HOME
 
 # add KAFKA bin to path
 PATH="$KAFKA_HOME/bin:$PATH"                                                        
+
+# allow topic to be deleted
+# add this line to server.properties
+delete.topic.enable=true
 ~                                                                                   
 ~                          
 
