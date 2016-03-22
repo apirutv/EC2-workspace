@@ -63,12 +63,24 @@ ZK_HOME="$HOME/zookeeper/zookeeper-3.4.8"
 export ZK_HOME
 
 # create zoo.cfg under $ZK_HOME/conf /w the following lines
+cp zoo_sample.cfg zoo.cfg
 tickTime=2000
-dataDir=~/zookeeper/dataDir
+dataDir=/home/mladmin/zookeeper/dataDir
 clientPort=2181
+
+# create an id file under the dataDir
+echo 1 > myid
+
+# cluster config
+server.1=0.0.0.0:2888:3888
+server.2=zk2:2888:3888
+server.3=zk3:2888:3888
 
 # start zookeeper
 $ZK_HOME/bin/zkServer.sh start
+
+# if not started, trouble shoot /w foreground mode
+$ZK_HOME/bin/zkServer.sh start-foreground
 
 # check status
 $ZK_HOME/bin/zkServer.sh status
