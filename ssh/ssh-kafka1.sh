@@ -1,1 +1,2 @@
-ssh -i ~/.ssh/apirut-key-pair-2.pem kafka1
+ssh -o ServerAliveInterval=10 -i /Users/apirut/.ssh/apirut-key-pair-2.pem ubuntu@kafka1
+
