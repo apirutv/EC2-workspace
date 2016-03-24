@@ -117,6 +117,7 @@ $STORM_HOME/bin/storm supervisor
 
 # download kafka
 wget http://www.eu.apache.org/dist/kafka/0.9.0.1/kafka_2.11-0.9.0.1.tgz
+(curl -O http://www.eu.apache.org/dist/kafka/0.9.0.1/kafka_2.11-0.9.0.1.tgz)
 
 # add KAFKA_HOME to .profile
 KAFKA_HOME="$HOME/kafka/kafka_2.11-0.9.0.1"
