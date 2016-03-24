@@ -143,6 +143,24 @@ broker.id=[unique id e.g. 1,2,3]
 port=9092
 host.name=[ip/name of each host e.g. kafka1, kafka2]
 
+# ------------------------------------------
+# SPARK INSTALLATION
+# ------------------------------------------
+
+wget http://www.scala-lang.org/files/archive/scala-2.11.8.tgz
+tar -xzvf scala-2.11.8.tgz 
+
+SCALA_HOME="$HOME/scala/scala-2.11.8/"
+export SCALA_HOME
+PATH="$SCALA_HOME/bin:$PATH"
+
+wget http://d3kbcqa49mib13.cloudfront.net/spark-1.2.0-bin-hadoop2.4.tgz
+tar -xzvf spark-1.2.0-bin-hadoop2.4.tgz 
+
+
+SPARK_HOME="$HOME/spark/spark-1.6.1"
+export SPARK_HOME
+PATH="$SPARK_HOME/bin:$PATH"
 
 
 
