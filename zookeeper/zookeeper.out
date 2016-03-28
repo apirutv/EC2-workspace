@@ -1,27 +1,15 @@
-2016-02-26 04:36:43,476 [myid:] - INFO  [main:QuorumPeerConfig@103] - Reading configuration from: /home/ubuntu/zookeeper/zookeeper-3.4.8/bin/../conf/zoo.cfg
-2016-02-26 04:36:43,481 [myid:] - INFO  [main:DatadirCleanupManager@78] - autopurge.snapRetainCount set to 3
-2016-02-26 04:36:43,481 [myid:] - INFO  [main:DatadirCleanupManager@79] - autopurge.purgeInterval set to 0
-2016-02-26 04:36:43,482 [myid:] - INFO  [main:DatadirCleanupManager@101] - Purge task is not scheduled.
-2016-02-26 04:36:43,482 [myid:] - WARN  [main:QuorumPeerMain@113] - Either no config or no quorum defined in config, running  in standalone mode
-2016-02-26 04:36:43,500 [myid:] - INFO  [main:QuorumPeerConfig@103] - Reading configuration from: /home/ubuntu/zookeeper/zookeeper-3.4.8/bin/../conf/zoo.cfg
-2016-02-26 04:36:43,501 [myid:] - INFO  [main:ZooKeeperServerMain@95] - Starting server
-2016-02-26 04:36:43,514 [myid:] - INFO  [main:Environment@100] - Server environment:zookeeper.version=3.4.8--1, built on 02/06/2016 03:18 GMT
-2016-02-26 04:36:43,514 [myid:] - INFO  [main:Environment@100] - Server environment:host.name=ip-172-31-25-173.ap-southeast-1.compute.internal
-2016-02-26 04:36:43,514 [myid:] - INFO  [main:Environment@100] - Server environment:java.version=1.7.0_95
-2016-02-26 04:36:43,514 [myid:] - INFO  [main:Environment@100] - Server environment:java.vendor=Oracle Corporation
-2016-02-26 04:36:43,514 [myid:] - INFO  [main:Environment@100] - Server environment:java.home=/usr/lib/jvm/java-7-openjdk-amd64/jre
-2016-02-26 04:36:43,514 [myid:] - INFO  [main:Environment@100] - Server environment:java.class.path=/home/ubuntu/zookeeper/zookeeper-3.4.8/bin/../build/classes:/home/ubuntu/zookeeper/zookeeper-3.4.8/bin/../build/lib/*.jar:/home/ubuntu/zookeeper/zookeeper-3.4.8/bin/../lib/slf4j-log4j12-1.6.1.jar:/home/ubuntu/zookeeper/zookeeper-3.4.8/bin/../lib/slf4j-api-1.6.1.jar:/home/ubuntu/zookeeper/zookeeper-3.4.8/bin/../lib/netty-3.7.0.Final.jar:/home/ubuntu/zookeeper/zookeeper-3.4.8/bin/../lib/log4j-1.2.16.jar:/home/ubuntu/zookeeper/zookeeper-3.4.8/bin/../lib/jline-0.9.94.jar:/home/ubuntu/zookeeper/zookeeper-3.4.8/bin/../zookeeper-3.4.8.jar:/home/ubuntu/zookeeper/zookeeper-3.4.8/bin/../src/java/lib/*.jar:/home/ubuntu/zookeeper/zookeeper-3.4.8/bin/../conf:
-2016-02-26 04:36:43,515 [myid:] - INFO  [main:Environment@100] - Server environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
-2016-02-26 04:36:43,515 [myid:] - INFO  [main:Environment@100] - Server environment:java.io.tmpdir=/tmp
-2016-02-26 04:36:43,515 [myid:] - INFO  [main:Environment@100] - Server environment:java.compiler=<NA>
-2016-02-26 04:36:43,516 [myid:] - INFO  [main:Environment@100] - Server environment:os.name=Linux
-2016-02-26 04:36:43,517 [myid:] - INFO  [main:Environment@100] - Server environment:os.arch=amd64
-2016-02-26 04:36:43,517 [myid:] - INFO  [main:Environment@100] - Server environment:os.version=3.13.0-74-generic
-2016-02-26 04:36:43,517 [myid:] - INFO  [main:Environment@100] - Server environment:user.name=ubuntu
-2016-02-26 04:36:43,517 [myid:] - INFO  [main:Environment@100] - Server environment:user.home=/home/ubuntu
-2016-02-26 04:36:43,517 [myid:] - INFO  [main:Environment@100] - Server environment:user.dir=/home/ubuntu/EC2-workspace/zookeeper
-2016-02-26 04:36:43,529 [myid:] - INFO  [main:ZooKeeperServer@787] - tickTime set to 2000
-2016-02-26 04:36:43,529 [myid:] - INFO  [main:ZooKeeperServer@796] - minSessionTimeout set to -1
-2016-02-26 04:36:43,530 [myid:] - INFO  [main:ZooKeeperServer@805] - maxSessionTimeout set to -1
-2016-02-26 04:36:43,556 [myid:] - INFO  [main:NIOServerCnxnFactory@89] - binding to port 0.0.0.0/0.0.0.0:2181
-2016-02-26 04:36:43,570 [myid:] - INFO  [main:FileSnap@83] - Reading snapshot /tmp/zookeeper/version-2/snapshot.d042
+2016-03-22 18:35:33,077 [myid:] - INFO  [main:QuorumPeerConfig@103] - Reading configuration from: /home/mladmin/zookeeper/zookeeper-3.4.8/bin/../conf/zoo.cfg
+2016-03-22 18:35:33,086 [myid:] - INFO  [main:QuorumPeer$QuorumServer@149] - Resolved hostname: 0.0.0.0 to address: /0.0.0.0
+2016-03-22 18:35:33,086 [myid:] - INFO  [main:QuorumPeer$QuorumServer@149] - Resolved hostname: zk2 to address: zk2/192.168.1.12
+2016-03-22 18:35:33,086 [myid:] - WARN  [main:QuorumPeerConfig@284] - No server failure will be tolerated. You need at least 3 servers.
+2016-03-22 18:35:33,087 [myid:] - INFO  [main:QuorumPeerConfig@331] - Defaulting to majority quorums
+2016-03-22 18:35:33,087 [myid:] - ERROR [main:QuorumPeerMain@85] - Invalid config, exiting abnormally
+org.apache.zookeeper.server.quorum.QuorumPeerConfig$ConfigException: Error processing /home/mladmin/zookeeper/zookeeper-3.4.8/bin/../conf/zoo.cfg
+	at org.apache.zookeeper.server.quorum.QuorumPeerConfig.parse(QuorumPeerConfig.java:123)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMain.initializeAndRun(QuorumPeerMain.java:101)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMain.main(QuorumPeerMain.java:78)
+Caused by: java.lang.IllegalArgumentException: ~/zookeeper/dataDir/myid file is missing
+	at org.apache.zookeeper.server.quorum.QuorumPeerConfig.parseProperties(QuorumPeerConfig.java:341)
+	at org.apache.zookeeper.server.quorum.QuorumPeerConfig.parse(QuorumPeerConfig.java:119)
+	... 2 more
+Invalid config, exiting abnormally

@@ -63,24 +63,12 @@ ZK_HOME="$HOME/zookeeper/zookeeper-3.4.8"
 export ZK_HOME
 
 # create zoo.cfg under $ZK_HOME/conf /w the following lines
-cp zoo_sample.cfg zoo.cfg
 tickTime=2000
-dataDir=/home/mladmin/zookeeper/dataDir
+dataDir=~/zookeeper/dataDir
 clientPort=2181
-
-# create an id file under the dataDir
-echo 1 > myid
-
-# cluster config
-server.1=0.0.0.0:2888:3888
-server.2=zk2:2888:3888
-server.3=zk3:2888:3888
-
+  34449
 # start zookeeper
 $ZK_HOME/bin/zkServer.sh start
-
-# if not started, trouble shoot /w foreground mode
-$ZK_HOME/bin/zkServer.sh start-foreground
 
 # check status
 $ZK_HOME/bin/zkServer.sh status
@@ -117,8 +105,6 @@ $STORM_HOME/bin/storm supervisor
 
 # download kafka
 wget http://www.eu.apache.org/dist/kafka/0.9.0.1/kafka_2.11-0.9.0.1.tgz
-(curl -O http://www.eu.apache.org/dist/kafka/0.9.0.1/kafka_2.11-0.9.0.1.tgz)
-tar -xzvf kafka_2.11-0.9.0.1.tgz
 
 # add KAFKA_HOME to .profile
 KAFKA_HOME="$HOME/kafka/kafka_2.11-0.9.0.1"
@@ -126,10 +112,6 @@ export KAFKA_HOME
 
 # add KAFKA bin to path
 PATH="$KAFKA_HOME/bin:$PATH"                                                        
-
-# allow topic to be deleted
-# add this line to server.properties
-delete.topic.enable=true
 ~                                                                                   
 ~                          
 
@@ -145,24 +127,6 @@ broker.id=[unique id e.g. 1,2,3]
 port=9092
 host.name=[ip/name of each host e.g. kafka1, kafka2]
 
-# ------------------------------------------
-# SPARK INSTALLATION
-# ------------------------------------------
-
-wget http://www.scala-lang.org/files/archive/scala-2.11.8.tgz
-tar -xzvf scala-2.11.8.tgz 
-
-SCALA_HOME="$HOME/scala/scala-2.11.8/"
-export SCALA_HOME
-PATH="$SCALA_HOME/bin:$PATH"
-
-wget http://d3kbcqa49mib13.cloudfront.net/spark-1.2.0-bin-hadoop2.4.tgz
-tar -xzvf spark-1.2.0-bin-hadoop2.4.tgz 
-
-
-SPARK_HOME="$HOME/spark/spark-1.6.1"
-export SPARK_HOME
-PATH="$SPARK_HOME/bin:$PATH"
 
 
 

@@ -1,0 +1,11 @@
+# create a new project
+mvn archetype:generate -DgroupId=com.apirut.test -DartifactId=test-app1 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractMode=false
+
+# clearn the project 
+mvn clean
+
+# create a package
+mvn package
+
+# test the project
+java -cp target/test-app1-1.0-SNAPSHOT.jar com.apirut.test.App
