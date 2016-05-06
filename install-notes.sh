@@ -164,6 +164,22 @@ SPARK_HOME="$HOME/spark/spark-1.6.1"
 export SPARK_HOME
 PATH="$SPARK_HOME/bin:$PATH"
 
+# ------------------------------------------
+# REDIS INSTALLATION
+# ------------------------------------------
 
+$ wget http://download.redis.io/releases/redis-3.0.7.tar.gz
+$ tar xzf redis-3.0.7.tar.gz
+$ cd redis-3.0.7
+$ make
 
+# start redis server
+$ src/redis-server
+
+# start redis client
+$ src/redis-cli
+redis> set foo bar
+OK
+redis> get foo
+"bar"
 
